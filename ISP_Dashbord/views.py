@@ -2,12 +2,6 @@ from urllib import response
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 
-# Create your views here.
-# def ISP_Email(request) :
-#     # return render(request,"home.html")
-#     response = redirect('home/')
-#     return response
-
 
 def home(request):
     return render(request,'home.html')
