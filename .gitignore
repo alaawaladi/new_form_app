@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+local_settings.py
+*.sqlite3
+*.sqlite3-journal
+migrations/*
+recovery/migrations/*
+accounts/migrations/*
+traps/migrations/
+staticfiles/*
+static_files/*
+robots.txt
+.htaccess
+.vscode  
+*.bak  
+*.dat  
+*.dir
+
+# Environments
+.vscode/
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+#celery
+celery_state.db.bak
+celery_state.db.dat
