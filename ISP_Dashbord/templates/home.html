@@ -11,28 +11,44 @@
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="{% static 'style/style.css' %}">
     <link rel="stylesheet" href="{% static 'style/datatables.css' %}">
-
+  <link rel="stylesheet" href="{% static 'style/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'style/awesome-bootstrap-checkbox.css' %}">
    
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href=" https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <script src="{% static 'js/jQuery.js' %}"></script>
-    <script src="{% static 'js/datatables.js' %}"></script>
     <script>
-            $(document).ready( function () {
-                var  DT1 = $('#example').DataTable();
-              $(".selectAll").on( "click", function(e) {
-                  if ($(this).is( ":checked" )) {
-                      DT1.rows(  ).select();        
-                  } else {
-                      DT1.rows(  ).deselect(); 
-                  }
-              });
-              } );
-             
+    
+      const currentlocation = location.href;
+      const menuItem = document.querySelector('a');
+      const menulength = menuItem.length
+      for (let i = 0 ; i<menulength.length; i++){
+        if (menuItem[i].href === currentlocation){
+          menuItem[i].className = "active"
+        }
+      }
+         </script>
+    <script>
+
+    
+      $(document).ready( function () {
+        $('#example').dataTable( {
+       "lengthMenu": [ [10, 25, 50, 100, 200, 500, -1], [10, 25, 50, 100, 200, 500,"All"] ]
+     } );
+           var  DT1 = $('#example').DataTable();
+         $(".selectAll").on( "click", function(e) {
+             if ($(this).is( ":checked" )) {
+                 DT1.rows(  ).select();        
+             } else {
+                 DT1.rows(  ).deselect(); 
+             }
+         });
+         } ); 
+        
           
     </script>
     <script>
-      
+
       $(window).on('load', function () {
   $('#preloader-active').delay(450).fadeOut('slow');
   $('body').delay(450).css({
@@ -54,7 +70,7 @@
 {% block preloader %}
   
 <!--Preloader Start -->
-  
+
 <div id="preloader-active">
   <div class="preloader d-flex align-items-center justify-content-center">
     <div class="preloader-inner position-relative">
@@ -135,7 +151,7 @@
             <div class="top">
                 <i class="uil uil-bars sidebar-toggle"></i>
     
-                <div class="search-box"id="example_filter" class="dataTables_filter">
+                <div class="search-box dataTables_filter">
                     <i class="uil uil-search"></i>
                     
                     <input type="search" placeholder="Search here..." aria-controls="example">
@@ -566,7 +582,9 @@
         {% block additionaljs %}
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
         <script src="{% static 'js/Dash.js' %}"></script>
-     
+      <script src="{% static 'js/datatables.js' %}"></script>
+   <script src="{% static 'js/dataTables.checkboxes.min.js' %}"></script>
+   
         {% endblock additionaljs %}
         {% endblock body %}
 

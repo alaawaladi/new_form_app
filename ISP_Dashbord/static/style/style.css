@@ -132,6 +132,7 @@ nav .menu-items{
     border-radius: 50%;
     background-color: var(--primary-color);
 }
+
 body.dark li a:hover:before{
     background-color: var(--text-color);
 }
