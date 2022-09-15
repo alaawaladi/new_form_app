@@ -32,14 +32,16 @@ body{
 }
 body.dark{
     --primary-color: #3A3B3C;
-    --panel-color: #242526;
+    /* --panel-color: #242526; original code */
+    --panel-color: #0d1117;
     --text-color: #CCC;
     --black-light-color: #CCC;
     --border-color: #4D4C4C;
     --toggle-color: #FFF;
-    --box1-color: #3A3B3C;
-    --box2-color: #3A3B3C;
-    --box3-color: #3A3B3C;
+    /* --box1-color: #3A3B3C; orgin  code */
+    --box1-color: #161b22;
+    --box2-color: #161b22;
+    --box3-color: #161b22;
     --title-icon-color: #CCC;
 }
 /* === Custom Scroll Bar CSS === */
@@ -560,9 +562,4 @@ ul,ol{
 }
 .preloader .preloader-img img {
   max-width: 55px;
-}
-.preloader .pere-text strong {
-  font-weight: 800;
-  color: #dca73a;
-  text-transform: uppercase;
 }
